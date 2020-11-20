@@ -1,0 +1,52 @@
+﻿@model Asp.netCoreMvc.Models.Warehouse
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<h4>Antrepo Formu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="EkleveyaDuzenle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Code" class="control-label"></label>
+                <input asp-for="Code" class="form-control" />
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TarihG" class="control-label"></label>
+                <input asp-for="TarihG" class="form-control" />
+                <span asp-validation-for="TarihG" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TarihK" class="control-label"></label>
+                <input asp-for="TarihK" class="form-control" />
+                <span asp-validation-for="TarihK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gumruk" class="control-label"></label>
+                <input asp-for="Gumruk" class="form-control" />
+                <span asp-validation-for="Gumruk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Gönder" class="btn btn-primary" />
+                <a asp-action="Index">&nbsp;&nbsp;&nbsp;&nbsp; Listeye Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

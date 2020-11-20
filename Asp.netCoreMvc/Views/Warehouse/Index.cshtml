@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Asp.netCoreMvc.Models.Warehouse>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Antrepo Listesi</h1>
+<hr />
+
+<p>
+    <a asp-action="EkleveyaDuzenle">Kayıt Oluştur/Düzenle</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TarihG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TarihK)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gumruk)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TarihG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TarihK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gumruk)
+            </td>
+            <td>
+                <a asp-action="EkleveyaDuzenle" asp-route-id="@item.Id"><i class="fa fa-marker fa-lg" icon></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Kaydı Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
